@@ -11,27 +11,8 @@ a, a:link, a:hover {
   text-decoration: none;
 }
 
-.caret(@color: @font-color-primary) {
-  //color: transparent;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  vertical-align: top;
-  content: "";
-  border-left-width: 6px;
-  border-right-width: 6px;
-  border-top-width: 8px;
-  border-bottom-color: @color;
-  border-style: solid;
-  border-bottom-style: none;
-  border-top-color: @color;
-  .transition(.25s);
-}
-
-.caret {
-  .caret();
-  .transform(scale(1.001));
-}
+.pull-left {float: left};
+.pull-right {float: right};
 
 // Global CSS Styling for menu
 // --------------------------------------------------

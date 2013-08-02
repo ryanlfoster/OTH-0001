@@ -9,7 +9,7 @@
       display: none;
     }
 
-    // First level (Main Menu)
+    // LEVEL 1 (Main Menu)
     > * > ul {
 
       > li {
@@ -23,13 +23,15 @@
 
         // Add arrow if item has child
         &.has-child {
-          > a {
-            background: url('../img/navigation-arrow-down.png') right center no-repeat;
-            padding-right: @level-1-right-padding + 10px;
+          > a:after {
+            font-family: 'Flat-UI-Icons';
+            font-weight: 300;
+            content: "\f078";
+            margin-left: 10px;
           }
         }
 
-        // Second level
+        // LEVEL 2
         > ul {
           display: none;
           position: absolute;
@@ -38,6 +40,20 @@
           left: 0;
           width: @level-2-width;
           padding-top: @level-2-top-spacing;
+
+          // Show the outside arrow on the submenu
+          &:before {
+            position: absolute;
+            top: 0px;
+            left: @level-2-left-padding;
+            border-right: 9px solid transparent;
+            border-bottom: 9px solid @wet-asphalt;
+            border-left: 9px solid transparent;
+            border-top: 9px solid transparent;
+            content: '';
+            width: 0;
+            .transform(rotate(360deg));
+          }
 
           > li {
             position: relative;
@@ -59,7 +75,17 @@
               .border-radius(0 0 @menu-border-radius @menu-border-radius)
             }
 
-            // Third level
+            // Show an arrow icon if the menu has subitems
+            &.has-child {
+              > a:after {
+                font-family: 'Flat-UI-Icons';
+                font-weight: 300;
+                content: "\f054";
+                float: right;
+              }
+            }
+
+            // LEVEL 3
             > ul {
               display: none;
               position: absolute;
@@ -68,6 +94,20 @@
               left: @level-2-width;
               width: @level-3-width;
               padding-left: @level-3-left-spacing;
+
+              // Show the outside arrow on the submenu
+              &:before {
+                position: absolute;
+                top: 9px;
+                left: 0px;
+                border-right: 9px solid transparent;
+                border-bottom: 9px solid @wet-asphalt;
+                border-left: 9px solid transparent;
+                border-top: 9px solid transparent;
+                content: '';
+                width: 0;
+                .transform(rotate(270deg));
+              }
 
               > li {
 

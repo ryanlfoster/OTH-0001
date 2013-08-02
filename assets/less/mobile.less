@@ -9,7 +9,7 @@
       display: none;
     }
 
-    // Level 1
+    // LEVEL 1
     > * > ul {
 
       > li {
@@ -24,12 +24,15 @@
 
         // Add arrow if item has child
         &.has-child {
-          > a {
-            background: url('../img/navigation-arrow-down.png') right center no-repeat;
+          > a:after {
+            font-family: 'Flat-UI-Icons';
+            font-weight: 300;
+            content: "\f078";
+            float: right;
           }
         }
 
-        // Level 2
+        // LEVEL 2
         > ul {
           display: none;
 
@@ -43,7 +46,17 @@
               line-height: @level-2-responsive-line-height;
             }
 
-            // Level 3
+            // Add arrow if item has child
+            &.has-child {
+              > a:after {
+                font-family: 'Flat-UI-Icons';
+                font-weight: 300;
+                content: "\f078";
+                float: right;
+              }
+            }
+
+            // LEVEL 3
             > ul {
               display: none;
 

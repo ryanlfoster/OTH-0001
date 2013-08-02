@@ -15,7 +15,8 @@
 
             <div class="responsive-buttons">
                 <button type="button" class="btn" data-toggle="collapse" data-target=".wolkenkraft-rwd-menu"><span data-icon="&#xe000;" aria-hidden="true"></span></button>
-                <button type="button" class="btn" data-toggle="collapse" data-target=".wolkenkraft-rwd-menu-account"><span data-icon="&#xe003;" aria-hidden="true"></span></button>
+                <button type="button" class="btn pull-right" data-toggle="collapse" data-target=".wolkenkraft-rwd-menu-account"><span data-icon="&#xe003;" aria-hidden="true"></span></button>
+                <button type="button" class="btn pull-right"><span data-icon="&#xe007;" aria-hidden="true"></span></button>
             </div>
 
             <!-- The main navigation -->
