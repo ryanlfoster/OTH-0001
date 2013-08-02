@@ -1,0 +1,90 @@
+// Global HTML style
+// --------------------------------------------------
+body {
+  font-family: @base-font-family;
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  color: @font-color-primary;
+}
+
+a, a:link, a:hover {
+  text-decoration: none;
+}
+
+.caret(@color: @font-color-primary) {
+  //color: transparent;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  content: "";
+  border-left-width: 6px;
+  border-right-width: 6px;
+  border-top-width: 8px;
+  border-bottom-color: @color;
+  border-style: solid;
+  border-bottom-style: none;
+  border-top-color: @color;
+  .transition(.25s);
+}
+
+.caret {
+  .caret();
+  .transform(scale(1.001));
+}
+
+// Global CSS Styling for menu
+// --------------------------------------------------
+.wolkenkraft-rwd-navbar {
+
+  background-color: @wet-asphalt;
+  .border-radius(@menu-border-radius);
+  display: inline-block;
+  width: 100%;
+
+  // Global link styling
+  a, a:link, a:visited {
+    display: block;
+    color: @font-color-primary;
+    &:hover {
+      color: @turquoise;
+    }
+  }
+
+  // Global Nav-List styling for all levels
+  ul {
+    .border-radius(@menu-border-radius);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  // Level 1
+  > * > ul {
+
+    > li {
+
+      // Level 2
+      > ul {
+
+        > li {
+          background-color: @wet-asphalt;
+
+          // Level 3
+          > ul {
+
+            > li {
+              background-color: @wet-asphalt;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,30 @@
+//
+// Mixins
+// --------------------------------------------------
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.transition(@properties) {
+  -webkit-transition: @properties;
+  -moz-transition: @properties;
+  -o-transition: @properties;
+  transition: @properties;
+  -webkit-backface-visibility: hidden;
+}
+
+.transform(@properties) {
+  -webkit-transform: @properties;
+  -moz-transform: @properties;
+  -ms-transform: @properties;
+  -o-transform: @properties;
+  transform: @properties;
+}
+
+.box-shadow(@properties) {
+  -webkit-box-shadow: @properties;
+  -moz-box-shadow: @properties;
+  box-shadow: @properties;
+}

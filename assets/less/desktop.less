@@ -1,0 +1,104 @@
+// Responsive: From Tablet upwards (Desktop Menu)
+// --------------------------------------------------
+@media (min-width: @responsive-breakpoint) {
+
+  .wolkenkraft-rwd-navbar {
+
+    // Hide responsive buttons on desktop menu
+    .responsive-buttons {
+      display: none;
+    }
+
+    // First level (Main Menu)
+    > * > ul {
+
+      > li {
+        position: relative;
+        float: left;
+
+        > a {
+          padding: @level-1-top-padding @level-1-right-padding @level-1-bottom-padding @level-1-left-padding;
+          font-weight: bold;
+        }
+
+        // Add arrow if item has child
+        &.has-child {
+          > a {
+            background: url('../img/navigation-arrow-down.png') right center no-repeat;
+            padding-right: @level-1-right-padding + 10px;
+          }
+        }
+
+        // Second level
+        > ul {
+          display: none;
+          position: absolute;
+          z-index: 999;
+          top: @level-1-top-padding + @level-1-bottom-padding + @level-1-font-size;
+          left: 0;
+          width: @level-2-width;
+          padding-top: @level-2-top-spacing;
+
+          > li {
+            position: relative;
+
+            > a {
+              font-size: @level-2-font-size;
+              line-height: @level-2-line-height;
+              padding: @level-2-top-padding @level-2-right-padding @level-2-bottom-padding @level-2-left-padding;
+
+            }
+
+            // Only for styling, to make the list on level 2 look better
+            &:first-child {
+              padding-top: @level-2-top-padding;
+              .border-radius(@menu-border-radius @menu-border-radius 0 0)
+            }
+            &:last-child {
+              padding-bottom: @level-2-bottom-padding;
+              .border-radius(0 0 @menu-border-radius @menu-border-radius)
+            }
+
+            // Third level
+            > ul {
+              display: none;
+              position: absolute;
+              z-index: 999;
+              top: 0;
+              left: @level-2-width;
+              width: @level-3-width;
+              padding-left: @level-3-left-spacing;
+
+              > li {
+
+                > a {
+                  font-size: @level-3-font-size;
+                  line-height: @level-3-line-height;
+                  padding: @level-3-top-padding @level-3-right-padding @level-3-bottom-padding @level-3-left-padding;
+                }
+
+                // Only for styling, to make the list on level 2 look better
+                &:first-child {
+                  padding-top: @level-3-top-padding;
+                  .border-radius(@menu-border-radius @menu-border-radius 0 0)
+                }
+                &:last-child {
+                  padding-bottom: @level-3-bottom-padding;
+                  .border-radius(0 0 @menu-border-radius @menu-border-radius)
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
